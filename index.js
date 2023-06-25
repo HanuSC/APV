@@ -14,7 +14,7 @@ app.use(express.json())
 conectarDB();
 
 // 
-const dominiosPermitidos = [process.env.FRONTEND_HOST, 'https://apv-backend-28us.onrender.com'];
+const dominiosPermitidos = [process.env.FRONTEND_HOST];
 const corsOptions = {
     origin: function(origin, callback) {
         if(dominiosPermitidos.indexOf(origin) !== -1) {
@@ -27,7 +27,7 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions))
-const PORT = process.env.PORT | 4000
+const PORT =  4000
 app.use('/api/veterinarios', veterinarioRoutes);
 app.use('/api/pacientes', pacienteRoutes);
 
