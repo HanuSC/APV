@@ -14,7 +14,7 @@ app.use(express.json())
 conectarDB();
 
 // 
-const dominiosPermitidos = [process.env.FRONTEND_HOST];
+/* const dominiosPermitidos = [process.env.FRONTEND_HOST];
 const corsOptions = {
     origin: function(origin, callback) {
         if(dominiosPermitidos.indexOf(origin) !== -1) {
@@ -24,9 +24,10 @@ const corsOptions = {
             callback(new Error('Origen no permitido'))
         }
     }
-}
+} */
 
-app.use(cors(corsOptions))
+/* app.use(cors(corsOptions)) */
+app.use(cors())
 const PORT =  4000
 app.use('/api/veterinarios', veterinarioRoutes);
 app.use('/api/pacientes', pacienteRoutes);
