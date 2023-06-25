@@ -14,7 +14,7 @@ app.use(express.json())
 conectarDB();
 
 // 
-const dominiosPermitidos = [process.env.FRONTEND_HOST];
+const dominiosPermitidos = [process.env.FRONTEND_HOST, 'https://apv-backend-28us.onrender.com'];
 const corsOptions = {
     origin: function(origin, callback) {
         if(dominiosPermitidos.indexOf(origin) !== -1) {
